@@ -17,12 +17,13 @@ function getComputerChoice(){
 //Function to make the human choice case insensitive
 function getHumanChoice(){
     let choice = prompt("Choose your option:").toLowerCase();
-    if (choice !== "rock" && "paper" && "scissors"){
+    if (choice !== "rock" && choice !== "paper" && choice !== "scissors"){
         return 'Invalid option, please choose "Rock", "Paper" or "Scissors"'; 
     }else
     return choice;
 }
 
+//Function to play a single round
 let humanScore = 0;
 let computerScore = 0;
 
@@ -47,11 +48,11 @@ function playRound(humanChoice, computerChoice){
         computerScore = computerScore + 1;
     }else if (humanChoice == computerChoice){
         console.log("It's a tie!");
-    }
-    console.log("El resultado es:\n Computadora: " + computerScore + "\n Jugador: " + humanScore);    
+    }    
 }
+// console.log("El resultado es:\n Computadora: " + computerScore + "\n Jugador: " + humanScore);
 
-// const humanSelection = getHumanChoice();
-// const computerSelection = getComputerChoice();
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
 
-console.log(playRound(getHumanChoice(), getComputerChoice()));
+console.log(playRound(humanSelection, computerSelection));
